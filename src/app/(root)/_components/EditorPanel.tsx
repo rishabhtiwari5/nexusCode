@@ -24,25 +24,25 @@ function EditorPanel() {
     if (editor) editor.setValue(newCode);
   }, [language, editor]);
 
+  const handleFontSizeChange = (newSize: number) => {
+    const size = Math.min(Math.max(newSize, 12), 24);
+    setFontSize(size);
+    localStorage.setItem("editor-font-size", size.toString());
+  };
+
   useEffect(() => {
     const savedFontSize = localStorage.getItem("editor-font-size");
     if (savedFontSize) setFontSize(parseInt(savedFontSize));
   }, [setFontSize]);
 
-  const handleRefresh = () => {
-    const defaultCode = LANGUAGE_CONFIG[language].defaultCode;
-    if (editor) editor.setValue(defaultCode);
-    localStorage.removeItem(`editor-code-${language}`);
-  };
-
   const handleEditorChange = (value: string | undefined) => {
     if (value) localStorage.setItem(`editor-code-${language}`, value);
   };
 
-  const handleFontSizeChange = (newSize: number) => {
-    const size = Math.min(Math.max(newSize, 12), 24);
-    setFontSize(size);
-    localStorage.setItem("editor-font-size", size.toString());
+  const handleRefresh = () => {
+    const defaultCode = LANGUAGE_CONFIG[language].defaultCode;
+    if (editor) editor.setValue(defaultCode);
+    localStorage.removeItem(`editor-code-${language}`);
   };
 
   if (!mounted) return null;
