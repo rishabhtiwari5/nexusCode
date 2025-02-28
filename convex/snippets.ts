@@ -125,6 +125,16 @@ export const addComment = mutation({
   },
 });
 
+export const getSnippetById = query({
+  args: { snippetId: v.id("snippets") },
+  handler: async (ctx, args) => {
+    const snippet = await ctx.db.get(args.snippetId);
+    if (!snippet) throw new Error("Snippet not found");
+
+    return snippet;
+  },
+});
+
 export const deleteComment = mutation({
   args: { commentId: v.id("snippetComments") },
   handler: async (ctx, args) => {
@@ -143,22 +153,6 @@ export const deleteComment = mutation({
   },
 });
 
-export const getSnippets = query({
-  handler: async (ctx) => {
-    const snippets = await ctx.db.query("snippets").order("desc").collect();
-    return snippets;
-  },
-});
-
-export const getSnippetById = query({
-  args: { snippetId: v.id("snippets") },
-  handler: async (ctx, args) => {
-    const snippet = await ctx.db.get(args.snippetId);
-    if (!snippet) throw new Error("Snippet not found");
-
-    return snippet;
-  },
-});
 
 export const getComments = query({
   args: { snippetId: v.id("snippets") },
@@ -171,6 +165,14 @@ export const getComments = query({
       .collect();
 
     return comments;
+  },
+});
+
+
+export const getSnippets = query({
+  handler: async (ctx) => {
+    const snippets = await ctx.db.query("snippets").order("desc").collect();
+    return snippets;
   },
 });
 
@@ -190,7 +192,6 @@ export const isSnippetStarred = query({
           q.eq(q.field("userId"), identity.subject) && q.eq(q.field("snippetId"), args.snippetId)
       )
       .first();
-
     return !!star;
   },
 });
