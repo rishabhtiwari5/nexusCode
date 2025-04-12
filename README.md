@@ -5,7 +5,7 @@ NexusCode is a modern web-based code editor and collaboration platform. It provi
 ## Tech Stack
 
 - **Frontend Framework**: Next.js
-- **Database & Real-time**: Convex
+- **Backend**: Convex
 - **Language**: TypeScript
 - **Authentication**: Clerk
 - **Styling**: Tailwind CSS
