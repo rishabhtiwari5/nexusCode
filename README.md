@@ -1,6 +1,6 @@
-# NexusCode SaaS code editor
+# NexusCode - SaaS code editor
 
-NexusCode is a modern web-based code editor and collaboration platform. It provides a powerful environment for writing, sharing, and collaborating on code.
+NexusCode is a modern, web-based code editor built for developers to run, share and discover others code with ease. It offers an intuitive and collaborative workspace where programmers can experiment, solve problems, and curate a personal library of reusable code across multiple programming languages. NexusCode fosters a dynamic ecosystem for code sharing and discovery, empowering developers of all skill levels to learn, contribute, and grow together.
 
 ## Tech Stack
 
