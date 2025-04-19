@@ -28,7 +28,7 @@ NexusCode is a modern, web-based code editor built for developers to run, share 
 ![Screenshot 2025-04-12 121158](https://github.com/user-attachments/assets/6028b0e1-0dc2-4af6-96d8-e9b685f732f3)
 
 
-## Profile page, keeps track of your stats, code executions
+## Profile page - keeps track of your stats, code executions
 
 ![Screenshot 2025-04-12 121802](https://github.com/user-attachments/assets/c4b56dca-0957-4269-9a8e-87ce8fe7c5d2)
 
